@@ -20,7 +20,8 @@
 				"esbenp.prettier-vscode",
 				"johnpapa.vscode-peacock",
 				"redhat.vscode-yaml",
-				"github.vscode-github-actions"
+				"github.vscode-github-actions",
+				"Angular.ng-template"
 			]
 		}
 	}
