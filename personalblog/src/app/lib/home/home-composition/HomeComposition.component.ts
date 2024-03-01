@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 import classNames from 'classnames';
 
 // Services
-import { ContentActiveService } from '../../../services/content.service';
+import { WebPageFacade } from '../../../services/content.facade';
 
 // Components
 import { NavigationMenuComponent } from '../navigation-menu/NavigationMenu.component';
@@ -22,8 +22,6 @@ import { SelfHeaderComponent } from '../self-header/SelfHeader.component';
   styleUrl: './HomeComposition.component.css'
 })
 export class HomeCompositionComponent {
-  constructor(private $contentActive: ContentActiveService) {
-
-
+  constructor(private webpageFacade: WebPageFacade) {
   }
 }

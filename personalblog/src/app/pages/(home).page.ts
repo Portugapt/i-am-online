@@ -4,7 +4,7 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { NgIf } from '@angular/common';
 
 // Services
-import { ContentActiveService } from '../services/content.service';
+import { WebPageFacade } from '../services/content.facade';
 
 // Components
 import { HomeCompositionComponent } from '../lib/home/home-composition/HomeComposition.component';
@@ -16,6 +16,6 @@ import { HomeCompositionComponent } from '../lib/home/home-composition/HomeCompo
   templateUrl: './home.component.html',
 })
 export default class HomeComponent {
-  constructor(public $contentActive: ContentActiveService) {}
+  constructor(public webpageFacade: WebPageFacade) {}
 
 }

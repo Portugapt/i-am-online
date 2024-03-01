@@ -4,7 +4,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { ContentActiveService } from '../../../services/content.service';
+import { WebPageFacade } from '../../../services/content.facade';
 
 @Component({
   selector: 'personalblog-navigation-buttons',
@@ -14,12 +14,11 @@ import { ContentActiveService } from '../../../services/content.service';
   styleUrl: './NavigationButtons.component.css'
 })
 export class NavigationButtonsComponent {
-  constructor(private router: Router, private $contentActive: ContentActiveService) {}
+  constructor(private router: Router, private webpageFacade: WebPageFacade) {}
 
   transitionToContent() {
     console.log('Navigating to blog...');
     this.router.navigate(['/blog']);
-    this.$contentActive.contentActive.set(true);
-    console.log(this.$contentActive.contentActive())
+    this.webpageFacade.setContentActive(true);
   }
 }

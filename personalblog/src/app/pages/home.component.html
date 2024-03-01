@@ -3,12 +3,12 @@
 >
   <div
     class="portrait-slices-container"
-    [class.move-left]="$contentActive.contentActive()"
+    [class.move-left]="webpageFacade.contentActive()"
   >
     <personalblog-home-composition> </personalblog-home-composition>
   </div>
 
-  <div *ngIf="$contentActive.contentActive()" class="outlet-content" [class.rise]="$contentActive.contentActive()">
+  <div *ngIf="webpageFacade.contentActive()" class="outlet-content" [class.rise]="webpageFacade.contentActive()">
     <router-outlet />
   </div>
 </div>
