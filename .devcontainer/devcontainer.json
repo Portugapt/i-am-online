@@ -21,7 +21,8 @@
 				"johnpapa.vscode-peacock",
 				"redhat.vscode-yaml",
 				"github.vscode-github-actions",
-				"Angular.ng-template"
+				"Angular.ng-template",
+				"stivo.tailwind-fold"
 			]
 		}
 	}
