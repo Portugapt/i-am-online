@@ -8,4 +8,4 @@ import { CommonModule } from '@angular/common';
   templateUrl: './SelfHeader.component.html',
   styleUrl: './SelfHeader.component.css'
 })
-export class SelfheaderComponent {}
+export class SelfHeaderComponent {}

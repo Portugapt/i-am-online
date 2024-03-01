@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SelfheaderComponent } from './SelfHeader.component';
+import { SelfHeaderComponent } from './SelfHeader.component';
 
 describe('SelfheaderComponent', () => {
-  let component: SelfheaderComponent;
-  let fixture: ComponentFixture<SelfheaderComponent>;
+  let component: SelfHeaderComponent;
+  let fixture: ComponentFixture<SelfHeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SelfheaderComponent]
+      imports: [SelfHeaderComponent]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SelfheaderComponent);
+    fixture = TestBed.createComponent(SelfHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
