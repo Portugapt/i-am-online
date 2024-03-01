@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from "@angular/core";
+import { Component, AfterViewInit } from "@angular/core";
 import { RouterOutlet, RouterLink } from "@angular/router";
 import { injectContentFiles } from "@analogjs/content";
 

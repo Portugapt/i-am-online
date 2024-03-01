@@ -1,3 +1,14 @@
-<div>
-  <router-outlet />
+<div
+  class="min-h-screen flex flex-col items-center justify-center relative"
+>
+  <div
+    class="portrait-slices-container"
+    [class.move-left]="$contentActive.contentActive()"
+  >
+    <personalblog-home-composition> </personalblog-home-composition>
+  </div>
+
+  <div *ngIf="$contentActive.contentActive()" class="outlet-content" [class.rise]="$contentActive.contentActive()">
+    <router-outlet />
+  </div>
 </div>

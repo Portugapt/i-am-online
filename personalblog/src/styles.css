@@ -9,8 +9,8 @@
   }
   
   /* Transformed state, applied via a class change */
-.portrait-slices-container.move-right {
-    transform: translateX(100%); /* Adjust translation distance as needed */
+.portrait-slices-container.move-left {
+    transform: translateX(-100%); /* Adjust translation distance as needed */
 }
   
   /* Style for the blog content to rise up */
@@ -20,5 +20,6 @@
 }
   
 .outlet-content.rise {
+    transition: transform 2s; /* Adjust time as needed */
     transform: translateY(-200%); /* Adjust to final desired position */
 }
