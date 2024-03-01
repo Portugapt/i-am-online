@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SelfheaderComponent } from './selfheader.component';
+import { SelfheaderComponent } from './SelfHeader.component';
 
 describe('SelfheaderComponent', () => {
   let component: SelfheaderComponent;
