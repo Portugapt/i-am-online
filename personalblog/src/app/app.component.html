@@ -1,22 +1,63 @@
-<div class="bg-gray-900 text-white min-h-screen flex flex-col">
-<!-- Header -->
-<header class="bg-gray-800 py-4">
-    <div class="container mx-auto flex justify-between items-center">
-    <h1 class="text-2xl font-bold">My Personal Website</h1>
-    <!-- Add any navigation links here if needed -->
-    </div>
-</header>
+<div
+  class="bg-gray-100 min-h-screen flex flex-col items-center justify-center relative"
+>
+  <div
+    class="portrait-slices-container"
+    [class.move-right]="$contentActive.contentActive()"
+  >
+    <!-- Container for the photo and the icons -->
+    <div class="relative flex justify-center items-center">
+      <div class="relative">
+        <!-- Central Image as the centerpiece -->
+        <img
+          src="/src/banana.jpg"
+          alt="Your Portrait"
+          class="w-32 h-32 rounded-full z-10"
+          style="position: relative"
+        />
 
-<!-- Main Content -->
-<main class="flex-grow container mx-auto py-8">
-    <!-- Your router outlet for Angular routing -->
-    <router-outlet></router-outlet>
-</main>
-
-<!-- Footer -->
-<footer class="bg-gray-800 py-4 mt-auto">
-    <div class="container mx-auto text-center">
-    <p>&copy; 2024 My Personal Website. All rights reserved.</p>
+        <!-- SVG positioned to wrap around the central image -->
+        <svg
+          width="240"
+          height="240"
+          viewBox="0 0 240 240"
+          style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+          "
+        >
+          <!-- Circle for reference, adjust or remove as needed -->
+          <circle
+            cx="120"
+            cy="120"
+            r="90"
+            fill="none"
+            stroke="black"
+            stroke-width="2"
+          />
+          <!-- Adjusted example path for a larger slice, now clickable -->
+          <path
+            d="M120,120 L120,20 A100,100 0 0,1 220,120 Z"
+            fill="lightgrey"
+            stroke="black"
+            stroke-width="2"
+            (click)="navigateToBlog()"
+          />
+          <!-- Icon or text on the crust part, adjust position as needed -->
+          <!-- Add more slices with adjusted sizes as needed -->
+        </svg>
+      </div>
     </div>
-</footer>
+
+    <!-- Rest of your content -->
+    <h1 class="text-3xl font-bold text-gray-800 mt-8">Your Name</h1>
+    <p class="text-lg text-gray-700 mb-8">Description about yourself.</p>
+  </div>
+
+  <div class="outlet-content" [class.rise]="$contentActive.contentActive()">
+    <router-outlet />
+  </div>
 </div>

@@ -29,7 +29,7 @@ export default defineConfig(({ mode }) => {
               prerender: false,
             }
           }
-        }
+        },
       }),
       
       nxViteTsPaths(),

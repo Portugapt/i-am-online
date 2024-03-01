@@ -2,7 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
-display: block;
-height: 100%;
+
+/* Initial state */
+.portrait-slices-container {
+    transition: transform 2s; /* Adjust time as needed */
+  }
+  
+  /* Transformed state, applied via a class change */
+.portrait-slices-container.move-right {
+    transform: translateX(100%); /* Adjust translation distance as needed */
+}
+  
+  /* Style for the blog content to rise up */
+.outlet-content {
+    transition: transform 2s; /* Adjust time as needed */
+    transform: translateY(0%); /* Initial state, off-screen or lower */
+}
+  
+.outlet-content.rise {
+    transform: translateY(-200%); /* Adjust to final desired position */
 }
