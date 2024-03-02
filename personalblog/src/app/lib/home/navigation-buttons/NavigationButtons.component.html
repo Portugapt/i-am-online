@@ -1,15 +1,8 @@
-<div>
+<div class="portrait-slices-container" [class.move-left]="contentActive">
   <svg
     width="240"
     height="240"
     viewBox="0 0 240 240"
-    style="
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 0;
-    "
   >
     <!-- Circle for reference, adjust or remove as needed -->
     <circle
@@ -22,21 +15,21 @@
     />
     <!-- Adjusted example path for a larger slice, now clickable -->
     <path
-      d="M122 118 228 118C234 118 235 117 235 111A100 100 0 00129 15C123 15 122 16 122 22Z"
+      d="M122 118 225 118C231 118 232 117 232 111A100 100 0 00135 4C125 4 122 8 122 17Z"
       fill="lightgrey"
       stroke="black"
       stroke-width="2"
-      (click)="transitionToContent()"
+      (click)="gotoBlog()"
     />
     <!-- Icon or text on the crust part, adjust position as needed -->
     <!-- Add more slices with adjusted sizes as needed -->
 
     <path
-      d="M118 118 118 12C118 6 117 5 111 5A100 100 270 0015 111C15 117 16 118 22 118Z"
+      d="M122 122 122 225C122 231 123 232 129 232A100 100 90 00236 135C236 125 232 122 223 122Z"
       fill="lightgrey"
       stroke="black"
       stroke-width="2"
-      (click)="transitionToContent()"
+      (click)="gotoBlog()"
     />
     <!-- Text for 'CV' -->
     <text
@@ -52,11 +45,11 @@
 
     <!-- Path for 'Contact' section -->
     <path
-      d="M118 122 12 122C6 122 5 123 5 129A100 100 180 00111 225C117 225 118 224 118 218Z"
+      d="M118 122 15 122C9 122 8 123 8 129A100 100 180 00105 236C115 236 118 232 118 223Z"
       fill="lightgrey"
       stroke="black"
       stroke-width="2"
-      (click)="transitionToContent()"
+      (click)="gotoBlog()"
     />
     <!-- Text for 'Contact' -->
     <text
@@ -71,16 +64,16 @@
     </text>
 
     <path
-      d="M122 122 122 225C122 231 123 232 129 232A100 100 90 00225 129C225 123 224 122 218 122Z"
+      d="M118 118 118 15C118 9 117 8 111 8A100 100 270 004 105C4 115 8 118 17 118Z"
       fill="lightgrey"
       stroke="black"
       stroke-width="2"
-      (click)="transitionToContent()"
+      (click)="gotoBlog()"
     />
     <!-- Text for 'Contact' -->
     <text
-      x="165"
-      y="165"
+      x="177"
+      y="200"
       font-family="Arial, sans-serif"
       font-size="12"
       text-anchor="middle"

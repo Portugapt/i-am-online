@@ -1,24 +1,52 @@
 // Navigation Buttons.
 
 // Angular Core
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
-import { WebPageFacade } from '../../../services/content.facade';
+import { RoutingFacade } from '../../../services/routing.facade';
 
 @Component({
   selector: 'personalblog-navigation-buttons',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [CommonModule],
   templateUrl: './NavigationButtons.component.html',
-  styleUrl: './NavigationButtons.component.css'
+  styleUrl: './NavigationButtons.component.css',
+  providers: [RoutingFacade],
 })
 export class NavigationButtonsComponent {
-  constructor(private router: Router, private webpageFacade: WebPageFacade) {}
+  
+  /**
+   * Routing Facade 
+   * @private
+   * @memberof NavigationButtonsComponent
+   * @returns {RoutingFacade} The routing facade service
+   */
+  private readonly routingFacade = inject(RoutingFacade);
 
-  transitionToContent() {
-    console.log('Navigating to blog...');
-    this.router.navigate(['/blog']);
-    this.webpageFacade.setContentActive(true);
+  /**
+   * Content Active value
+   */
+  public contentActive: boolean = false;
+
+  /** 
+   * Update contentActive value 
+   * @private
+   * @memberof NavigationButtonsComponent
+   * @returns {void} void
+  */
+  private updateContentActive(): void {
+    this.contentActive = this.routingFacade.isContentActive();
+  }
+
+  /**
+   * Routing to Blog. Uses the routing facade to navigate to the blog page.
+   * @public
+   * @memberof NavigationButtonsComponent
+   * @returns {void} void
+   */
+  public gotoBlog(): void {
+    this.routingFacade.transitionToBlog();
+    this.updateContentActive();
   }
 }

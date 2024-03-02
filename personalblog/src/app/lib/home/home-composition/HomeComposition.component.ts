@@ -19,9 +19,10 @@ import { SelfHeaderComponent } from '../self-header/SelfHeader.component';
   standalone: true,
   imports: [CommonModule, NavigationMenuComponent, SelfHeaderComponent],
   templateUrl: './HomeComposition.component.html',
-  styleUrl: './HomeComposition.component.css'
+  styleUrl: './HomeComposition.component.css',
+  providers: [WebPageFacade],
 })
 export class HomeCompositionComponent {
-  constructor(private webpageFacade: WebPageFacade) {
+  constructor(public readonly webpageFacade: WebPageFacade) {
   }
 }
