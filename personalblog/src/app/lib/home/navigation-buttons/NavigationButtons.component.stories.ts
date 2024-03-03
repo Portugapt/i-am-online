@@ -1,33 +1,62 @@
 import type { Meta, StoryObj } from '@storybook/angular';
+import { argsToTemplate, componentWrapperDecorator  } from '@storybook/angular';
 
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { model, type ModelSignal } from '@angular/core';
 
 import { NavigationButtonsComponent } from './NavigationButtons.component';
 
-
 const meta: Meta<NavigationButtonsComponent> = {
   component: NavigationButtonsComponent,
-  title: 'NavigationButtonsComponent',
-  tags: ['Home','Navigation'],
-  
+  title: 'Home Navigation Buttons',
+  tags: ['Home', 'Navigation'],
+  render: (args: NavigationButtonsComponent) => ({
+    props: {
+      ...args,
+    },
+    template: `
+    <div class="flex justify-center">
+        <personalblog-navigation-buttons [()]></personalblog-navigation-buttons>
+    </div>
+    `,
+  }),
+  argTypes: {
+    contentActive: {
+      description: 'Content Active value.',
+      type: { name: 'function' },
+      defaultValue: 'home',
+      control: {
+        type: 'string',
+      },
+    },
+    activateContent: {
+      description: 'Go to content event emitter.',
+      action: 'activateContent',
+    },
+  },
+  parameters: {
+    actions: {
+      handles: ['activateContent'],
+    },
+  },
+  decorators: [componentWrapperDecorator((story) => `<div style="margin: 3em">${story}</div>`)]
 };
 export default meta;
 type Story = StoryObj<NavigationButtonsComponent>;
 
-
-export const Primary: Story = {
-  args: {},
-  render: () => ({
-    props: {},
-  }),
+export const ContentNotActive: Story = {
+  name: 'Default State',
+  args: {
+    contentActive: model('home'),
+  },
 };
 
-export const Heading: Story = {
+export const ContentActive: Story = {
   name: 'Hello',
-  args: {},
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    expect(canvas.getByText(/NavigationButtons works!/gi)).toBeTruthy();
+  args: {
+    contentActive: model('home'),
+  },
+  play: async ({ args }) => {
+    // Simulate the click to toggle contentActive
+      args.activateContent('anything')
   },
 };

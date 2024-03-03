@@ -1,4 +1,4 @@
-<div class="portrait-slices-container" [class.move-left]="contentActive">
+<div class="portrait-slices-container" [class.move-left]="contentActive() != 'home' ">
   <svg
     width="240"
     height="240"
@@ -19,7 +19,7 @@
       fill="lightgrey"
       stroke="black"
       stroke-width="2"
-      (click)="gotoBlog()"
+      (click)="activateContent('blog')"
     />
     <!-- Icon or text on the crust part, adjust position as needed -->
     <!-- Add more slices with adjusted sizes as needed -->
@@ -29,7 +29,7 @@
       fill="lightgrey"
       stroke="black"
       stroke-width="2"
-      (click)="gotoBlog()"
+      (click)="activateContent('cv')"
     />
     <!-- Text for 'CV' -->
     <text
@@ -49,7 +49,7 @@
       fill="lightgrey"
       stroke="black"
       stroke-width="2"
-      (click)="gotoBlog()"
+      (click)="activateContent('contact')"
     />
     <!-- Text for 'Contact' -->
     <text
@@ -68,7 +68,7 @@
       fill="lightgrey"
       stroke="black"
       stroke-width="2"
-      (click)="gotoBlog()"
+      (click)="activateContent('about')"
     />
     <!-- Text for 'Contact' -->
     <text

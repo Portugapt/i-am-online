@@ -1,6 +1,7 @@
-// content-active-facade.service.ts
+// webpage.facade.ts
+
+// Angular Core
 import { Injectable, Signal, computed, signal } from '@angular/core';
-import { ContentActiveService } from './content.service';
 
 // Interface
 interface WebpageState {
