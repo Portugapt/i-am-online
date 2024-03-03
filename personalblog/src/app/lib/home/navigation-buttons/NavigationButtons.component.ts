@@ -37,6 +37,7 @@ export class NavigationButtonsComponent {
    * @type {EventEmitter<string>}
    */
   activateContent(content: string) : void {
+    console.log( content)
     this.contentActive.update(() => content );
   }
 
