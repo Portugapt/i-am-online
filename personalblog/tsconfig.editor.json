@@ -3,5 +3,11 @@
   "include": ["**/*.ts"],
   "compilerOptions": {
     "types": ["node", "vitest/globals"]
-  }
+  },
+  "exclude": [
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "**/*.stories.ts",
+    "**/*.stories.js"
+  ]
 }

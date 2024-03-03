@@ -54,9 +54,55 @@
     },
     "test": {
       "executor": "@analogjs/platform:vitest",
-      "outputs": [
-        "{projectRoot}/coverage"
-      ]
+      "outputs": ["{projectRoot}/coverage"]
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "personalblog/.storybook",
+        "browserTarget": "personalblog:build-storybook",
+        "compodoc": false,
+        "styles": ["personalblog/src/styles.css"]
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/personalblog",
+        "configDir": "personalblog/.storybook",
+        "browserTarget": "personalblog:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c personalblog/.storybook --url=http://localhost:4400"
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "personalblog:build-storybook",
+        "staticFilePath": "dist/storybook/personalblog"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "personalblog:build-storybook:ci"
+        }
+      }
     }
   },
   "tags": []
