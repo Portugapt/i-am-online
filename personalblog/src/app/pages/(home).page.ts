@@ -7,7 +7,7 @@ import { NgIf } from '@angular/common';
 import { WebPageFacade } from '../services/content.facade';
 
 // Components
-import { HomeCompositionComponent } from '../lib/home/home-composition/HomeComposition.component';
+import { HomeCompositionComponent } from '../lib/home/composition-home/HomeComposition.component';
 
 @Component({
   selector: 'personalblog-home',

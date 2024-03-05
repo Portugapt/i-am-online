@@ -11,13 +11,12 @@ import classNames from 'classnames';
 import { WebPageFacade } from '../../../services/content.facade';
 
 // Components
-import { NavigationMenuComponent } from '../navigation-menu/NavigationMenu.component';
-import { SelfHeaderComponent } from '../self-header/SelfHeader.component';
+import { SelfHeaderComponent } from '../ui-self-header/UiSelfHeader.component';
 
 @Component({
   selector: 'personalblog-home-composition',
   standalone: true,
-  imports: [CommonModule, NavigationMenuComponent, SelfHeaderComponent],
+  imports: [CommonModule, SelfHeaderComponent],
   templateUrl: './HomeComposition.component.html',
   styleUrl: './HomeComposition.component.css',
   providers: [WebPageFacade],

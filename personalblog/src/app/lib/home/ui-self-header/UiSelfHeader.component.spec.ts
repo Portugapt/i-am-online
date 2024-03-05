@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NavigationMenuComponent } from './NavigationMenu.component';
+import { SelfHeaderComponent } from './UiSelfHeader.component';
 
-describe('NavigationMenuComponent', () => {
-  let component: NavigationMenuComponent;
-  let fixture: ComponentFixture<NavigationMenuComponent>;
+describe('SelfheaderComponent', () => {
+  let component: SelfHeaderComponent;
+  let fixture: ComponentFixture<SelfHeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavigationMenuComponent]
+      imports: [SelfHeaderComponent]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(NavigationMenuComponent);
+    fixture = TestBed.createComponent(SelfHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

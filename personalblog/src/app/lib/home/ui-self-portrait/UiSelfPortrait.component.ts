@@ -6,9 +6,15 @@ import { CommonModule } from '@angular/common';
   selector: 'personalblog-self-portrait',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './SelfPortrait.component.html',
-  styleUrl: './SelfPortrait.component.css'
+  template: `<div class="relative h-64 w-64">
+    <!-- Adjust the size as needed -->
+    <img
+      src="{{ photoPath }}"
+      class="h-24 w-24 rounded-full"
+      alt="Self Portrait"
+    />
+  </div>`,
 })
-export class SelfPortraitComponent {
+export class UISelfPortraitComponent {
   @Input() photoPath: string = 'assets/banana.jpg';
 }

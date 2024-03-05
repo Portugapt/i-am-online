@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { SelfPortraitComponent } from './SelfPortrait.component';
+import { UISelfPortraitComponent } from './UiSelfPortrait.component';
 
-const meta: Meta<SelfPortraitComponent> = {
-  component: SelfPortraitComponent,
+const meta: Meta<UISelfPortraitComponent> = {
+  component: UISelfPortraitComponent,
   title: 'Self Portrait Rounded',
 };
 export default meta;
-type Story = StoryObj<SelfPortraitComponent>;
+type Story = StoryObj<UISelfPortraitComponent>;
 
 export const Default: Story = {
   args: {},

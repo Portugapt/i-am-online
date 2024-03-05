@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NavigationButtonsComponent } from './NavigationButtons.component';
+import { UiNavigationButtonsComponent } from './UiNavigationButtons.component';
 
 describe('NavigationButtonsComponent', () => {
-  let component: NavigationButtonsComponent;
-  let fixture: ComponentFixture<NavigationButtonsComponent>;
+  let component: UiNavigationButtonsComponent;
+  let fixture: ComponentFixture<UiNavigationButtonsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavigationButtonsComponent]
+      imports: [UiNavigationButtonsComponent]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(NavigationButtonsComponent);
+    fixture = TestBed.createComponent(UiNavigationButtonsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
