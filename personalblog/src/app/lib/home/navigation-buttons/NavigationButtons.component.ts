@@ -28,7 +28,6 @@ export class NavigationButtonsComponent {
    */
   contentActive: ModelSignal<string> = model('home')
 
-
   /**
    * Activate contentActive value.
    * 
@@ -37,7 +36,6 @@ export class NavigationButtonsComponent {
    * @type {EventEmitter<string>}
    */
   activateContent(content: string) : void {
-    console.log( content)
     this.contentActive.update(() => content );
   }
 

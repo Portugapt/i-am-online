@@ -1,12 +1,16 @@
 // Story Name: Home Navigation Buttons
 import type { Meta, StoryObj } from '@storybook/angular';
-import { componentWrapperDecorator, moduleMetadata } from '@storybook/angular';
+import { argsToTemplate, componentWrapperDecorator } from '@storybook/angular';
 
 // Angular Core
 import { Component, OnChanges, SimpleChanges, model, signal } from '@angular/core';
 
 // Components
 import { NavigationButtonsComponent } from './NavigationButtons.component';
+
+const actionsData = {
+  activateContent: (content: string) => content,
+};
 
 @Component({
   standalone: true,
@@ -37,38 +41,29 @@ const meta: Meta<NavigationButtonsComponent> = {
   render: (args: NavigationButtonsComponent) => ({
     props: {
       ...args,
-      contentActive: model('home'),
+      contentActive: actionsData.activateContent('home'),
     },
     template: `
     <div class="flex justify-center">
-        <personalblog-navigation-buttons [(contentActive)]="contentActive"></personalblog-navigation-buttons>
+        <p> {{ contentActive }} </p>
+
+        <personalblog-navigation-buttons ${argsToTemplate(args)}></personalblog-navigation-buttons>
     </div>
     `,
   }),
   argTypes: {
     contentActive: {
       description: 'Content Active value.',
-      type: { name: 'string' },
-      defaultValue: 'home',
-      control: {
-        type: 'string',
-      },
-    },
-    activateContent: {
-      description: 'Go to content event emitter.',
-      action: 'activateContent',
+      type: { name: 'function' },
+      control: { type: 'select' },
     },
   },
   parameters: {
     actions: {
       handles: ['activateContent'],
     },
+    
   },
-  decorators: [
-    componentWrapperDecorator(
-      (story) => `<div style="margin: 3em">${story}</div>`
-    ),
-  ],
 };
 export default meta;
 type Story = StoryObj<NavigationButtonsComponent>;
