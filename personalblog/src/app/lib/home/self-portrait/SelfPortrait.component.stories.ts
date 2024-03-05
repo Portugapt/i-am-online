@@ -1,24 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { SelfPortraitComponent } from './SelfPortrait.component';
 
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
-
 const meta: Meta<SelfPortraitComponent> = {
   component: SelfPortraitComponent,
-  title: 'SelfPortraitComponent',
+  title: 'Self Portrait Rounded',
 };
 export default meta;
 type Story = StoryObj<SelfPortraitComponent>;
 
-export const Primary: Story = {
+export const Default: Story = {
   args: {},
-};
-
-export const Heading: Story = {
-  args: {},
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    expect(canvas.getByText(/SelfPortrait works!/gi)).toBeTruthy();
-  },
+  render: () => ({
+    props: {
+      photoPath: '/banana.jpg',
+    },
+  }),
 };

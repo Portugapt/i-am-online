@@ -1,7 +1,7 @@
 // Navigation Buttons.
 
 // Angular Core
-import { ChangeDetectionStrategy, Component, ModelSignal, model } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RoutingFacade } from '../../../services/routing.facade';
 
@@ -16,27 +16,17 @@ import { RoutingFacade } from '../../../services/routing.facade';
 })
 export class NavigationButtonsComponent {
 
-
-  /**
-   * Content Active value.
-   * 
-   * @public
-   * @required
-   * @memberof NavigationButtonsComponent
-   * @type {string}
-   * @default false
-   */
-  contentActive: ModelSignal<string> = model('home')
+  constructor(private readonly routingFacade: RoutingFacade) {}
 
   /**
    * Activate contentActive value.
    * 
    * @public
    * @memberof NavigationButtonsComponent
-   * @type {EventEmitter<string>}
+   * @type {string}
    */
-  activateContent(content: string) : void {
-    this.contentActive.update(() => content );
+  clickContent(content: string) : void {
+    this.routingFacade.transitionToRoute(content);
   }
 
 

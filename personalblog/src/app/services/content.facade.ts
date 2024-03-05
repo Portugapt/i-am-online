@@ -21,11 +21,12 @@ export class WebPageFacade {
   );
 
   // Provide a simplified API for updating the state
-  setContentActive(activeStatus: boolean): void {
+  setContentActive(status: boolean): void {
+    console.log('Setting content status to ' + status);
     this.state.update(
       (state: WebpageState): WebpageState => ({
         ...state,
-        contentActive: activeStatus,
+        contentActive: status,
       })
     );
   }

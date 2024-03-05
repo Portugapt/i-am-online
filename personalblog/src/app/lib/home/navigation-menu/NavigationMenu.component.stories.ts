@@ -6,7 +6,7 @@ import { expect } from '@storybook/jest';
 
 const meta: Meta<NavigationMenuComponent> = {
   component: NavigationMenuComponent,
-  title: 'NavigationMenuComponent',
+  title: 'Navigation Menu',
 };
 export default meta;
 type Story = StoryObj<NavigationMenuComponent>;

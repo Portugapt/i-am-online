@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+// Angular Core
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,4 +9,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './SelfPortrait.component.html',
   styleUrl: './SelfPortrait.component.css'
 })
-export class SelfPortraitComponent {}
+export class SelfPortraitComponent {
+  @Input() photoPath: string = 'assets/banana.jpg';
+}
