@@ -9,7 +9,7 @@ import { action } from '@storybook/addon-actions';
 import { UiNavigationButtonsComponent } from './UiNavigationButtons.component';
 
 export const actionsUIData = {
-  onClickContent: action('onClickContent'),
+  onContentActivated: action('onContentActivated'),
 };
 
 const meta: Meta<UiNavigationButtonsComponent> = {
@@ -18,7 +18,7 @@ const meta: Meta<UiNavigationButtonsComponent> = {
   tags: ['autodoc'],
   excludeStories: /.*UIData$/,
   argTypes: {
-    contentActive: {
+    contentActivated: {
       description: 'Output contentActive value.',
       table: {
         category: 'Output',
@@ -31,9 +31,9 @@ const meta: Meta<UiNavigationButtonsComponent> = {
   render: (args) => ({
     props: {
       ...args,
-      onClickContent: actionsUIData.onClickContent,
+      onContentActivated: actionsUIData.onContentActivated,
     },
-    template: `<personalblog-navigation-buttons ${argsToTemplate(args)}></personalblog-navigation-buttons>`,
+    template: `<personalblog-ui-navigation-buttons ${argsToTemplate(args)}></personalblog-ui-navigation-buttons>`,
   }),
   decorators: [
     componentWrapperDecorator(

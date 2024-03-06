@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { UiSelfHeaderComponent } from './UiSelfHeader.component';
+import { UiHomeComponent } from './UiHome.component';
 
-describe('SelfheaderComponent', () => {
-  let component: UiSelfHeaderComponent;
-  let fixture: ComponentFixture<UiSelfHeaderComponent>;
+describe('UiHomeComponent', () => {
+  let component: UiHomeComponent;
+  let fixture: ComponentFixture<UiHomeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UiSelfHeaderComponent]
+      imports: [UiHomeComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(UiSelfHeaderComponent);
+    fixture = TestBed.createComponent(UiHomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

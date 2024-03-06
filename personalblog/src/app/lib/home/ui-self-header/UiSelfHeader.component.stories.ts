@@ -1,24 +1,26 @@
+// Story: SelfHeaderComponent
+
+// Storybook Angular
 import type { Meta, StoryObj } from '@storybook/angular';
-import { SelfHeaderComponent } from './UiSelfHeader.component';
+import { componentWrapperDecorator } from '@storybook/angular';
 
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+// Component
+import { UiSelfHeaderComponent } from './UiSelfHeader.component';
 
-const meta: Meta<SelfHeaderComponent> = {
-  component: SelfHeaderComponent,
-  title: 'SelfHeaderComponent',
+
+const meta: Meta<UiSelfHeaderComponent> = {
+  component: UiSelfHeaderComponent,
+  title: 'Self Description Component',
+  decorators: [
+    componentWrapperDecorator(
+      (story) => `<div style="margin: 3em">${story}</div>`
+    ),
+  ],
 };
 export default meta;
-type Story = StoryObj<SelfHeaderComponent>;
+type Story = StoryObj<UiSelfHeaderComponent>;
 
 export const Primary: Story = {
   args: {},
 };
 
-export const Heading: Story = {
-  args: {},
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    expect(canvas.getByText(/SelfHeader works!/gi)).toBeTruthy();
-  },
-};

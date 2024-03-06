@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
-  selector: 'personalblog-navigation-buttons',
+  selector: 'personalblog-ui-navigation-buttons',
   imports: [CommonModule],
   templateUrl: './UiNavigationButtons.component.html',
 })
@@ -19,16 +19,16 @@ export class UiNavigationButtonsComponent {
    * @memberof UiNavigationButtonsComponent
    * @type {EventEmitter<string>}
    */
-  @Output() contentActive: EventEmitter<string> = new EventEmitter<string>();
+  @Output() contentActivated: EventEmitter<string> = new EventEmitter<string>();
 
   /**
-   * Click
+   * Content Active
    * 
    * @public
    * @memberof UiNavigationButtonsComponent
    * @type {string}
    */
-  onClickContent(content: string) : void {
-    this.contentActive.emit(content);
+  onContentActivated(content: string) : void {
+    this.contentActivated.emit(content);
   }
 }

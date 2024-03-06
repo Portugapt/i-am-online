@@ -1,0 +1,18 @@
+<div class="container mx-auto">
+  <div class="flex flex-col flex-wrap">
+    <div class="grow">
+      <div class="relative w-64 h-64">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <personalblog-ui-navigation-buttons (contentActivated)="onContentActivated($event)"></personalblog-ui-navigation-buttons>
+        </div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <personalblog-ui-self-portrait [photoPath]="photoPath"></personalblog-ui-self-portrait>
+        </div>
+      </div>
+    </div>
+    <!-- Self Header below the Navigation Menu and Self Portrait -->
+    <div class="flex-none">
+      <personalblog-ui-self-header></personalblog-ui-self-header>
+    </div>
+  </div>  
+</div>

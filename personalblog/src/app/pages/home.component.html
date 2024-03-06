@@ -1,10 +1,8 @@
 <div
-  class="min-h-screen flex flex-col items-center justify-center relative"
+  class="min-h-screen flex flex-col items-center justify-center"
 >
-  <div
-    class="portrait-slices-container"
-  >
-    <personalblog-home-composition> </personalblog-home-composition>
+  <div >
+    <personalblog-ui-composition-home> </personalblog-ui-composition-home>
   </div>
 
   <div *ngIf="webpageFacade.contentActive()" class="outlet-content" [class.rise]="webpageFacade.contentActive()">

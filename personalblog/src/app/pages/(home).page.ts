@@ -7,12 +7,12 @@ import { NgIf } from '@angular/common';
 import { WebPageFacade } from '../services/content.facade';
 
 // Components
-import { HomeCompositionComponent } from '../lib/home/composition-home/HomeComposition.component';
+import { UiHomeComponent  } from '../lib/home/ui-composition-home/UiHome.component';
 
 @Component({
   selector: 'personalblog-home',
   standalone: true,
-  imports: [RouterOutlet, NgIf, HomeCompositionComponent],
+  imports: [RouterOutlet, NgIf, UiHomeComponent],
   templateUrl: './home.component.html',
 })
 export default class HomeComponent {

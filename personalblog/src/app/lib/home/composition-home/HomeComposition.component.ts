@@ -4,24 +4,21 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-// Imports
-import classNames from 'classnames';
-
 // Services
 import { WebPageFacade } from '../../../services/content.facade';
 
 // Components
-import { SelfHeaderComponent } from '../ui-self-header/UiSelfHeader.component';
+import { UiSelfHeaderComponent } from '../ui-self-header/UiSelfHeader.component';
 
 @Component({
-  selector: 'personalblog-home-composition',
+  selector: 'personalblog-composition-home',
   standalone: true,
-  imports: [CommonModule, SelfHeaderComponent],
+  imports: [CommonModule, UiSelfHeaderComponent],
   templateUrl: './HomeComposition.component.html',
   styleUrl: './HomeComposition.component.css',
   providers: [WebPageFacade],
 })
 export class HomeCompositionComponent {
-  constructor(public readonly webpageFacade: WebPageFacade) {
+  constructor(public readonly routerFacade: WebPageFacade) {
   }
 }

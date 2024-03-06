@@ -12,4 +12,4 @@ import { CommonModule } from '@angular/common';
     </div>
   `,
 })
-export class SelfHeaderComponent {}
+export class UiSelfHeaderComponent {}
