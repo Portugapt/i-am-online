@@ -1,12 +1,17 @@
 import { Component } from "@angular/core";
+import { RouteMeta } from "@analogjs/router";
 
 import HomeComponent from "./pages/(home).page";
-import { RouterOutlet } from "@angular/router";
+
+export const routeMeta: RouteMeta = {
+  redirectTo: '/home',
+  pathMatch: 'full',
+};
 
 @Component({
   selector: "personalblog-root",
   standalone: true,
-  imports: [RouterOutlet, HomeComponent],
+  imports: [HomeComponent],
   templateUrl: "./app.component.html",
 })
 export class AppComponent {}

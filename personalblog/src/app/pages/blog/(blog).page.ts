@@ -6,8 +6,6 @@ import { NgFor } from "@angular/common";
 import { BlogPost } from "../../models/post";
 import { ContentActiveService } from "../../services/content.service";
 
-
-
 @Component({
   standalone: true,
   imports: [RouterOutlet, RouterLink, NgFor],

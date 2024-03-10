@@ -20,7 +20,18 @@ const meta: Meta<UiSelfHeaderComponent> = {
 export default meta;
 type Story = StoryObj<UiSelfHeaderComponent>;
 
-export const Primary: Story = {
-  args: {},
+export const Default: Story = {
+  args: {
+    selfDescription: 'I am a software developer',
+    selfName: 'John Doe',
+  },
+};
+
+export const TextWrapped: Story = {
+  name: 'Text Wrapped',
+  args: {
+    selfDescription: 'I am a software developer, this is a very long line',
+    selfName: 'John Doe',
+  },
 };
 

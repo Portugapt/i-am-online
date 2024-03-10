@@ -1,11 +1,17 @@
-<div
-  class="min-h-screen flex flex-col items-center justify-center"
->
-  <div >
-    <personalblog-ui-composition-home> </personalblog-ui-composition-home>
+<div class="min-h-screen flex flex-col items-center justify-center">
+  {{ displayedContent() }}
+  <div>
+    <personalblog-composition-home 
+    [photoPath]="photoPath" 
+    [selfName]="selfName"
+    [selfDescription]="selfDescription">
+    </personalblog-composition-home>
   </div>
 
-  <div *ngIf="webpageFacade.contentActive()" class="outlet-content" [class.rise]="webpageFacade.contentActive()">
+  <div
+    *ngIf="routesList.includes(displayedContent())"
+  >
     <router-outlet />
   </div>
 </div>
+

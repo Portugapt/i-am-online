@@ -17,11 +17,16 @@ import { UISelfPortraitComponent } from '../ui-self-portrait/UiSelfPortrait.comp
 // Stories
 import * as SelfPortraitStories from '../ui-self-portrait/UiSelfPortrait.component.stories';
 import * as NavigationButtonsStories from '../ui-navigation-buttons/UiNavigationButtons.component.stories';
+import * as SelfHeaderStories from '../ui-self-header/UiSelfHeader.component.stories';
+import * as UiNavigationButtonsComponentStories from '../ui-navigation-buttons/UiNavigationButtons.component.stories';
 
 const meta: Meta<UiHomeComponent> = {
   component: UiHomeComponent,
   title: 'Home Component UI',
   tags: ['autodoc'],
+  argTypes: {
+    ...UiNavigationButtonsComponentStories.default.argTypes,
+  },
   decorators: [
     moduleMetadata({
       imports: [
@@ -38,7 +43,6 @@ const meta: Meta<UiHomeComponent> = {
   render: (args) => ({
     props: {
       ...args,
-
       onContentActivated: NavigationButtonsStories.actionsUIData.onContentActivated,
     },
     template: `<personalblog-ui-composition-home ${argsToTemplate(args)}></personalblog-ui-composition-home>`,
@@ -50,5 +54,6 @@ type Story = StoryObj<UiHomeComponent>;
 export const Primary: Story = {
   args: {
     ...SelfPortraitStories.Default.args,
+    ...SelfHeaderStories.Default.args,
   },
 };

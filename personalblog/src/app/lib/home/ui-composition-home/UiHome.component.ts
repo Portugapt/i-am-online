@@ -13,7 +13,6 @@ import { UISelfPortraitComponent } from '../ui-self-portrait/UiSelfPortrait.comp
   templateUrl: './UiHome.component.html'
 })
 export class UiHomeComponent {
-
   /**
    * Photo Path
    * 
@@ -21,7 +20,25 @@ export class UiHomeComponent {
    * @memberof UiHomeComponent
    * @type {string}
    */
-  @Input() photoPath: string = '';
+  @Input({required: true}) photoPath!: string;
+
+  /**
+   * Self Name
+   * 
+   * @public
+   * @memberof UiHomeComponent
+   * @type {string}
+   */
+  @Input({required: true}) selfName!: string;
+
+  /**
+   * Self Description
+   * 
+   * @public
+   * @memberof UiHomeComponent
+   * @type {string}
+   */
+  @Input({required: true}) selfDescription!: string;
 
   /**
    * Content Active
@@ -31,10 +48,10 @@ export class UiHomeComponent {
    * @type {string}
    */
   @Output() 
-  $contentActivated: EventEmitter<string> = new EventEmitter<string>();
+  contentActivated: EventEmitter<string> = new EventEmitter<string>();
 
   onContentActivated(content: string) : void {
-    this.$contentActivated.emit(content);
+    this.contentActivated.emit(content);
   }
 
 }

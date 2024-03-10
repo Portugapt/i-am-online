@@ -5,20 +5,44 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // Services
-import { WebPageFacade } from '../../../services/content.facade';
+import { WebPageFacade } from '../../../services/webpage.facade';
 
 // Components
-import { UiSelfHeaderComponent } from '../ui-self-header/UiSelfHeader.component';
+import { UiHomeComponent } from '../ui-composition-home/UiHome.component';
+import { RouteMeta } from '@analogjs/router';
+
+export const routeMeta: RouteMeta = {
+  providers: [WebPageFacade],
+};
 
 @Component({
   selector: 'personalblog-composition-home',
   standalone: true,
-  imports: [CommonModule, UiSelfHeaderComponent],
-  templateUrl: './HomeComposition.component.html',
-  styleUrl: './HomeComposition.component.css',
-  providers: [WebPageFacade],
+  imports: [CommonModule, UiHomeComponent],
+  template: `<div>
+    <div>
+      <personalblog-ui-composition-home
+        [selfName]="selfName"
+        [selfDescription]="selfDescription"
+        [photoPath]="photoPath"
+        (contentActivated)="onContentActivated($event)"
+      ></personalblog-ui-composition-home>
+    </div>
+  </div> `,
 })
-export class HomeCompositionComponent {
-  constructor(public readonly routerFacade: WebPageFacade) {
+export class HomeCompositionComponent extends UiHomeComponent {
+  constructor(public readonly webpageFacade: WebPageFacade) {
+    super();
+  }
+
+  /**
+   * Content Activated
+   *
+   * @public
+   * @memberof HomeCompositionComponent
+   * @type {string}
+   */
+  override onContentActivated(content: string): void {
+    this.webpageFacade.navigate(content);
   }
 }
