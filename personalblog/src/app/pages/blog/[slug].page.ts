@@ -17,8 +17,6 @@ import { RouterOutlet } from '@angular/router';
   `,
 })
 export default class BlogPostPage {
-  
-
   post$ = injectContent<BlogPost>({
     param: 'slug',
     subdirectory: 'blog',

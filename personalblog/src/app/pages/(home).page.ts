@@ -1,11 +1,11 @@
 // Angular Core
-import { ChangeDetectionStrategy, Component, OnInit, Signal, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule, NgIf } from '@angular/common';
 
 // Reactivity
 import { toSignal } from '@angular/core/rxjs-interop';
-import { takeUntil } from 'rxjs';
+// import { takeUntil } from 'rxjs';
 
 // Services
 import { WebPageFacade } from '../services/webpage.facade';
@@ -37,5 +37,5 @@ export default class HomeComponent {
 
   selfName: string = 'João Monteiro';
   selfDescription: string = 'Software Engineer';
-  photoPath: string = 'assets/banana.jpg';
+  photoPath: string = 'src/assets/banana.jpg';
 }

@@ -103,6 +103,9 @@
           "buildTarget": "personalblog:build-storybook:ci"
         }
       }
+    },
+    "explore": {
+      "executor": "source-map-explorer dist/personalblog/client/**/*.js --only-mapped --no-border-checks"
     }
   },
   "tags": []

@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class='w-64 h-64'>
+    <div class='w-64 h-auto'>
       <h1 class="text-3xl font-bold text-gray-800 mt-8">{{ selfName }}</h1>
       <p class="text-lg text-gray-700 text-wrap mb-8">{{ selfDescription }}</p>
     </div>
