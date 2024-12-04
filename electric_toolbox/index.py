@@ -1,7 +1,12 @@
 from electric_toolbox.common.to_file import to_file
 
-def build(path: str) -> None:
-    contents="<p>Hello World</p>"
+from jinja2 import Environment
+    
+
+def build(path: str, j2_env: Environment,) -> None:
+    nav = j2_env.get_template("index/navbar.j2")
+    contents = nav.render()
+
     to_file(
         path=path,
         file_name="index.html",
