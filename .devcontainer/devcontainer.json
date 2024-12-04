@@ -31,7 +31,8 @@
 				"KevinRose.vsc-python-indent",
 				"tamasfe.even-better-toml",
 				"usernamehw.errorlens",
-				"yzhang.markdown-all-in-one"
+				"yzhang.markdown-all-in-one",
+				"samuelcolvin.jinjahtml"
 			]
 		}
 	}
