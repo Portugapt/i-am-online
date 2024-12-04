@@ -20,14 +20,9 @@ jobs:
         with:
           python-version-file: "pyproject.toml"
 
-      - name: Install dependencies
-        run: |
-          uv sync
-
       - name: Generate static site
         run: |
-          # <Your Python script to generate static files> 
-          python generate_site.py
+          uv run generate_site.py
 
       - name: Upload static files as artifact
         id: deployment
