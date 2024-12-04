@@ -1,7 +1,11 @@
-import os
 import electric_toolbox
-WEBSITE_DIRECTORY = "website"
+from jinja2 import Environment, PackageLoader
+from pathlib import Path
 
-os.mkdir(WEBSITE_DIRECTORY)
+WEBSITE_DIRECTORY: Path = Path("website")
+electric_toolbox.clean_and_recreate(WEBSITE_DIRECTORY)
 
-electric_toolbox.build_index(path=WEBSITE_DIRECTORY)
+
+jinja_env = Environment( loader= PackageLoader('electric_toolbox', 'templates'))
+
+electric_toolbox.build_index(path=WEBSITE_DIRECTORY, j2_env=jinja_env)
