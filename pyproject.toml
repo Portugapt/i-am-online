@@ -74,7 +74,3 @@ disallow_untyped_defs = true
 disallow_untyped_decorators = true
 ignore_missing_imports = false
 follow_imports = "normal"
-
-[[tool.mypy.overrides]]
-module = ["scripts.*"]  # Match all modules in the scripts directory
-follow_imports = "skip"
