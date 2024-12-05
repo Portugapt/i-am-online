@@ -1,12 +1,14 @@
 """Build index for the webpage."""
 
+from pathlib import Path
+
 from jinja2 import Environment
 
 from electric_toolbox.common.to_file import string_to_file
 
 
 def build(
-    path: str,
+    path: Path,
     j2_env: Environment,
 ) -> None:
     """Build the index.

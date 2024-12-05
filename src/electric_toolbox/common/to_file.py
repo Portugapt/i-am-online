@@ -1,8 +1,10 @@
 """Utilies to move an object to a file."""
 
+from pathlib import Path
+
 
 def string_to_file(
-    path: str,
+    path: Path,
     file_name: str,
     contents: str,
 ) -> None:
@@ -13,5 +15,5 @@ def string_to_file(
         file_name (str): The file name (including extension)
         contents (str): The contents to dump into the file.
     """
-    with open(f'{path}/{file_name}', 'w') as f:
+    with open(path / file_name, 'w') as f:
         f.write(contents)
