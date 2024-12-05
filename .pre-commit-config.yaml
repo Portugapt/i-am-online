@@ -46,7 +46,7 @@ repos:
     hooks:
     -   id: mypy
         args: ["--config-file", "pyproject.toml"]
-        additional_dependencies: [types-Jinja2>=2.11.9]
+        additional_dependencies: ["types-Jinja2>=2.11.9", "expression[pydantic]>=5.3.0"]
         stages: ["pre-commit"]
 
 -   repo: https://github.com/igorshubovych/markdownlint-cli
