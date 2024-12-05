@@ -9,7 +9,9 @@ description = "Personal Blog"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "expression>=5.3.0",
     "jinja2>=3.1.4",
+    "markdown>=3.7",
     "mypy>=1.13.0",
     "pytailwindcss>=0.2.0",
 ]
@@ -47,7 +49,7 @@ exclude = [
 ]
 
 # Same as Black.
-line-length = 88
+line-length = 120
 indent-width = 4
 
 [tool.ruff.lint]
