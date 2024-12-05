@@ -31,7 +31,8 @@
 				"usernamehw.errorlens",
 				"yzhang.markdown-all-in-one",
 				"samuelcolvin.jinjahtml",
-				"nefrob.vscode-just-syntax"
+				"nefrob.vscode-just-syntax",
+				"github.vscode-github-actions"
 			]
 		}
 	},
