@@ -3,7 +3,7 @@
 from pathlib import Path
 
 from electric_toolbox.common.files_management import list_folder_files
-from electric_toolbox.markd.read_markdown import read_contents as mkd_read
+from electric_toolbox.markup.read_markdown import read_contents as mkd_read
 
 
 def read_posts(
