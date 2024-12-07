@@ -5,7 +5,7 @@ from typing import Callable
 
 from expression.collections import Map
 
-from electric_toolbox.types.file import FileData
+from electric_toolbox.types.internal.file import FileData
 
 
 def remove_directory_tree(start_directory: Path) -> None:

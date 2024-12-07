@@ -1,1 +1,1 @@
-"""Types for the tool."""
+"""Data types for the project."""
