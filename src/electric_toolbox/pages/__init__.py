@@ -1,1 +1,0 @@
-"""Generator scripts for pages."""

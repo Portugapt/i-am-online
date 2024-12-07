@@ -1,6 +1,8 @@
 """Script to generate website."""
 
+import json
 from pathlib import Path
+from typing import Any, Dict
 
 from jinja2 import Environment, PackageLoader
 
@@ -15,6 +17,11 @@ jinja_env = Environment(
     autoescape=True,
 )
 
-electric_toolbox.build_index(path=WEBSITE_DIRECTORY, j2_env=jinja_env)
+with open(Path('compile.config.json'), 'r') as conf:
+    configs: Dict[str, Any] = json.loads(conf.read())
 
-electric_toolbox.read_posts(path=Path('content'), folder='posts')
+electric_toolbox.main(
+    path=WEBSITE_DIRECTORY,
+    j2_env=jinja_env,
+    configs=configs,
+)

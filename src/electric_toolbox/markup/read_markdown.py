@@ -18,15 +18,13 @@ def remove_frontmatter(markdown_text: str) -> str:
     return re.sub(r'^---(.*?)---\n', '', markdown_text, flags=re.DOTALL)
 
 
-def read_contents(contents: str) -> None:
+def markdown_to_html_no_frontmatter(contents: str) -> str:
     """Read contents. WIP."""
-    print(
-        markdown.markdown(
-            remove_frontmatter(contents),
-            extensions=[
-                'attr_list',
-            ],
-        )
+    return markdown.markdown(
+        remove_frontmatter(contents),
+        extensions=[
+            'attr_list',
+        ],
     )
 
 
