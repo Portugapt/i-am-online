@@ -8,6 +8,7 @@ from jinja2 import Environment
 
 from electric_toolbox.metadata.website_metadata import website_metadata
 from electric_toolbox.view import index as generate_index
+from electric_toolbox.view.posts import generate_posts
 
 
 def main(
@@ -27,6 +28,10 @@ def main(
         case Result(tag='ok', ok=_website):
             generate_index(
                 j2_env=j2_env,
+                metadata=_website,
+                root_path=path,
+            )
+            generate_posts(
                 metadata=_website,
                 root_path=path,
             )
